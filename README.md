@@ -32,25 +32,44 @@ It showcases:
 ```bash
 /lib
 ├── main.dart
+│
 ├── core/
-│   └── constants.dart
+│   ├── constans/
+│   │   └── app_constans.dart
+│   ├── di/
+│   │   └── locator.dart
+│   ├── extensions/
+│   │   └── sizedbox_extensions.dart
+│   ├──routes/
+│   │   ├── navigator_services.dart
+│   │   ├── routes.dart   
+│   │   └── app_routes.dart
+│   ├── service/
+│   │   └── firebase_service.dar
+│   ├── theme/
+│   │   ├── app_colors.dart
+│   │   └── app_text.dartt
+│   
 ├── models/
 │   └── service_model.dart
+│
 ├── view/
-│   ├── home_screen.dart
-│   └── detail_screen.dart
+│   ├── widget/
+│   │   ├── bottom_nav.dart
+│   │   ├── card_widget.dart
+│   │   └── hero_section.dart
+│   │
+│   ├── detail_screen.dart
+│   └── home_screen.dart
+│
 ├── viewmodel/
-│   └── service_viewmodel.dart
+│   ├── service_viewmodel.dart
+│   └── state_enum.dart
+│
 ├── repository/
 │   ├── service_repository.dart
 │   └── service_repository_impl.dart
-├── di/
-│   └── locator.dart
-└── utils/
-    ├── app_colors.dart
-    └── app_text.dart
 ```
-
 ---
 
 ## 🛠️ Technologies & Packages Used
@@ -159,14 +178,6 @@ flutter run
 - Used `flutter_svg` to load SVG assets.
 - Applied `BoxDecoration` with gradients and opacity overlays to make text readable over background images.
 - Implemented loading and error states where needed.
-
----
-
-## 📬 Submission Form
-
-🔗 [Submission Form](https://forms.gle/iE8C6ZZpjPiDucZj6)
-
----
 
 ## 🙌 Thanks!
 
