@@ -1,16 +1,188 @@
-# music_services
+```markdown
+# 🎵 Music Services Module – Flutter Developer Intern Assignment  
+**Submitted by**: [Your Name]  
+**GitHub Repo Link**: [Insert Your GitHub Link Here]
 
-A new Flutter project.
+This is a Flutter implementation of the **"Music Services Module (Single Screen)"** as part of the S.Rocks.Music Flutter Developer Intern assignment.
 
-## Getting Started
+It showcases:
+- Responsive UI design based on provided Figma layout
+- Firebase Firestore integration for dynamic card data
+- MVVM architecture pattern with clean separation of concerns
+- State management using `Provider`
+- Optional dependency injection using `get_it`
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🧱 Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+| Feature | Description |
+|--------|-------------|
+| ✅ UI Recreation | Accurate recreation of the Figma design including cards, header, and bottom nav |
+| ✅ Firebase Integration | Fetches service data from Firestore in real-time |
+| ✅ Navigation | Tapping any card navigates to detail screen |
+| ✅ MVVM Architecture | Separated View, ViewModel, and Repository layers |
+| ✅ Provider | Used for state management |
+| 💡 Bonus: DI with `get_it` | Optional bonus implemented for scalability |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 📁 Folder Structure
+
+```
+/lib
+├── main.dart
+├── core/
+│   └── constants.dart
+├── models/
+│   └── service_model.dart
+├── view/
+│   ├── home_screen.dart
+│   └── detail_screen.dart
+├── viewmodel/
+│   └── service_viewmodel.dart
+├── repository/
+│   ├── service_repository.dart
+│   └── service_repository_impl.dart
+├── di/
+│   └── locator.dart
+└── utils/
+    └── app_colors.dart / app_text.dart
+```
+
+---
+
+## 🛠️ Technologies & Packages Used
+
+| Package | Purpose |
+|--------|---------|
+| `provider` | For state management |
+| `cloud_firestore` | To fetch music services dynamically |
+| `get_it` | Used for dependency injection (optional bonus) |
+| `flutter_screenutil` | For responsive UI across devices |
+| `flutter_svg` | To render SVG icons from asset paths |
+| `firebase_core`, `material`, `cupertino` | Core dependencies |
+
+---
+
+## 📖 Firebase Setup Instructions
+
+### 1. Firestore Collection: `services`
+
+Each document contains:
+
+```json
+{
+  "title": "Music Production",
+  "description": "Custom instrumentals & film scoring",
+  "icon": "assets/icons/music_production.svg",
+  "background": "assets/images/music_production.png"
+}
+```
+
+### 2. Security Rules (for testing only)
+
+```js
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read: if true;
+    }
+  }
+}
+```
+
+> 🔐 In production, tighten these rules with authentication.
+
+---
+
+## ⚙️ How to Run
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/yourname/your-repo-name.git
+cd your-repo-name
+```
+
+### 2. Get dependencies
+
+```bash
+flutter pub get
+```
+
+### 3. Set up Firebase
+
+- Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
+- Add an Android/iOS app and download `google-services.json` or `GoogleService-Info.plist`
+- Enable Firestore
+- Update `lib/main.dart` with your `Firebase.initializeApp()` config or use auto-initialized options
+
+### 4. Run the app
+
+```bash
+flutter run
+```
+
+---
+
+## 🧪 What Was Tested?
+
+| Component | Status |
+|----------|--------|
+| ✅ UI matches Figma | Yes |
+| ✅ Firestore fetched dynamically | Yes |
+| ✅ Card tap navigation | Yes |
+| ✅ Responsive layout | Yes (`flutter_screenutil`) |
+| ✅ Provider for state | Yes |
+| 💡 DI with `get_it` | Yes (Optional Bonus) |
+
+---
+
+## 📦 Submission Details
+
+| Item | Status |
+|------|--------|
+| ✅ GitHub Repo | Included |
+| ✅ README | This file |
+| ✅ Demo Video | Attached in submission form |
+| ✅ Code Follows MVVM | Yes |
+| ✅ Uses Provider | Yes |
+| ✅ Uses `get_it` | Yes (Bonus Point) |
+
+---
+
+## 📝 Notes
+
+- All card icons and images are loaded dynamically through asset paths stored in Firestore.
+- Used `flutter_svg` to load SVG assets.
+- Applied `BoxDecoration` with gradients and opacity overlays to make text readable over background images.
+- Implemented loading and error states where needed.
+
+---
+
+## 📬 Submission Form
+
+🔗 [Submission Form](https://forms.gle/iE8C6ZZpjPiDucZj6)
+
+---
+
+## 🙌 Thanks!
+
+Thanks for reviewing my submission. I’ve done my best to follow all requirements while applying best practices like **MVVM**, **Provider**, and **Dependency Injection**.
+
+Let me know if you'd like me to clarify anything further!
+```
+
+---
+
+## 📥 Want It as a File?
+
+If you'd prefer this as a downloadable `.md` file:
+
+👉 [Click here to download `README.md`](#) *(Right-click ➜ Save As...)*
+
+Or just copy the above markdown into a new file called `README.md` in your GitHub repo.
+
+---
