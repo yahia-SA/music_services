@@ -1,7 +1,7 @@
 
 # 🎵 Music Services Module – Flutter Developer Intern Assignment  
 **Submitted by**: Yahia Samir  
-**GitHub Repo Link**: [https://github.com/yahia-samir/srocks-music-assignment](https://github.com/yahia-samir/srocks-music-assignment)
+**GitHub Repo Link**: [https://github.com/yahia-samir/music-assignment](https://github.com/yahia-samir/music-assignment)
 
 This is a Flutter implementation of the **"Music Services Module (Single Screen)"** as part of the S.Rocks.Music Flutter Developer Intern assignment.
 
