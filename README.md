@@ -1,7 +1,7 @@
-```markdown
+
 # 🎵 Music Services Module – Flutter Developer Intern Assignment  
-**Submitted by**: [Your Name]  
-**GitHub Repo Link**: [Insert Your GitHub Link Here]
+**Submitted by**: Yahia Samir  
+**GitHub Repo Link**: [https://github.com/yahia-samir/srocks-music-assignment](https://github.com/yahia-samir/srocks-music-assignment)
 
 This is a Flutter implementation of the **"Music Services Module (Single Screen)"** as part of the S.Rocks.Music Flutter Developer Intern assignment.
 
@@ -29,7 +29,7 @@ It showcases:
 
 ## 📁 Folder Structure
 
-```
+```bash
 /lib
 ├── main.dart
 ├── core/
@@ -47,7 +47,8 @@ It showcases:
 ├── di/
 │   └── locator.dart
 └── utils/
-    └── app_colors.dart / app_text.dart
+    ├── app_colors.dart
+    └── app_text.dart
 ```
 
 ---
@@ -93,7 +94,7 @@ service cloud.firestore {
 }
 ```
 
-> 🔐 In production, tighten these rules with authentication.
+> 🔐 For production apps, replace these permissive rules with secure rules that validate authenticated user access.
 
 ---
 
@@ -102,8 +103,8 @@ service cloud.firestore {
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/yourname/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/yahia-samir/srocks-music-assignment.git
+cd srocks-music-assignment
 ```
 
 ### 2. Get dependencies
@@ -146,7 +147,6 @@ flutter run
 |------|--------|
 | ✅ GitHub Repo | Included |
 | ✅ README | This file |
-| ✅ Demo Video | Attached in submission form |
 | ✅ Code Follows MVVM | Yes |
 | ✅ Uses Provider | Yes |
 | ✅ Uses `get_it` | Yes (Bonus Point) |
@@ -173,16 +173,3 @@ flutter run
 Thanks for reviewing my submission. I’ve done my best to follow all requirements while applying best practices like **MVVM**, **Provider**, and **Dependency Injection**.
 
 Let me know if you'd like me to clarify anything further!
-```
-
----
-
-## 📥 Want It as a File?
-
-If you'd prefer this as a downloadable `.md` file:
-
-👉 [Click here to download `README.md`](#) *(Right-click ➜ Save As...)*
-
-Or just copy the above markdown into a new file called `README.md` in your GitHub repo.
-
----
