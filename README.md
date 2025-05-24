@@ -121,8 +121,8 @@ service cloud.firestore {
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/yahia-samir/srocks-music-assignment.git
-cd srocks-music-assignment
+git clone https://github.com/yahia-samir/music_services.git
+cd music_services
 ```
 
 ### 2. Get dependencies
