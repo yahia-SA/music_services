@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,8 +8,58 @@ import 'package:music_services/core/extensions/sizedbox_extensions.dart';
 import 'package:music_services/core/theme/app_colors.dart';
 import 'package:music_services/core/theme/app_text.dart';
 
-class HeroSection extends StatelessWidget {
+class HeroSection extends StatefulWidget {
   const HeroSection({super.key});
+
+  @override
+  State<HeroSection> createState() => _HeroSectionState();
+}
+
+class _HeroSectionState extends State<HeroSection> {
+  int _currentIndex = 0;
+  late FixedExtentScrollController _controller;
+  late final Timer _timer;
+
+  final List<String> serviceCategories = [
+    "Punjabi Lyrics",
+    "Hindi Rap Vocals",
+    "Hip Hop Beats",
+    "Mix and Master",
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = FixedExtentScrollController();
+
+    // Change category every 5 second
+    _timer = Timer.periodic(const Duration(seconds: 5), (timer) {
+      setState(() {
+        if (_currentIndex < serviceCategories.length - 1) {
+          _currentIndex++;
+          _controller.animateToItem(
+            _currentIndex,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+          );
+        } else {
+          _currentIndex = 0;
+          _controller.animateToItem(
+            _currentIndex,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeIn,
+          );
+        }
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,20 +104,40 @@ class HeroSection extends StatelessWidget {
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           const Icon(Icons.search, color: Colors.white),
                           horizontalSpace(3.5),
-                          Expanded(
-                            child: TextField(
-                              style: AppText.syne14Medium.copyWith(
-                                color: Colors.white,
-                              ),
-                              decoration: InputDecoration(
-                                hintText: AppConstans.search,
-                                hintStyle: AppText.syne14Medium.copyWith(
-                                  color: AppColors.iconColor,
-                                ),
-                                border: InputBorder.none,
+                          Text(
+                            AppConstans.search,
+                            style: AppText.syne14Medium.copyWith(
+                              color: AppColors.iconColor,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 150.w,
+                            height: 22.h,
+                            child: ListWheelScrollView.useDelegate(
+                              controller: _controller,
+                              itemExtent: 50,
+                              physics: const NeverScrollableScrollPhysics(),
+                              perspective: 0.001,
+                              childDelegate: ListWheelChildBuilderDelegate(
+                                builder: (context, index) {
+                                  if (index >= 0 &&
+                                      index < serviceCategories.length) {
+                                    return Center(
+                                      child: Text(
+                                        '"${serviceCategories[index]}"',
+                                        style: AppText.syne14Medium
+                                            .copyWith(
+                                              color: AppColors.iconColor,
+                                            ),
+                                      ),
+                                    );
+                                  }
+                                  return const SizedBox.shrink();
+                                },
                               ),
                             ),
                           ),
