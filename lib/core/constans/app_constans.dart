@@ -13,5 +13,6 @@ class AppConstans {
   static const String avatar = 'assets/images/avatar.svg';
   static const String musicCd = 'assets/images/music_cd.svg';
   static const String music_2 = 'assets/images/music_2.svg';
+  static const String home = 'assets/icons/home.svg';
   
 }

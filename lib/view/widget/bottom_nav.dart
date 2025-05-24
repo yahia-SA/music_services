@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:music_services/core/constans/app_constans.dart';
 import 'package:music_services/core/theme/app_colors.dart';
 
 class BottomNav extends StatelessWidget {
@@ -17,7 +18,7 @@ class BottomNav extends StatelessWidget {
           icon: SizedBox(
             width: 24,
             height: 24,
-            child: SvgPicture.asset('assets/icons/home.svg',clipBehavior: Clip.antiAlias,),  ),
+            child: SvgPicture.asset(AppConstans.home,clipBehavior: Clip.antiAlias,),  ),
           label: 'Home',
         ),
         const BottomNavigationBarItem(
