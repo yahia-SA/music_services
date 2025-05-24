@@ -64,7 +64,6 @@ It showcases:
 │
 ├── viewmodel/
 │   ├── service_viewmodel.dart
-│   └── state_enum.dart
 │
 ├── repository/
 │   ├── service_repository.dart
